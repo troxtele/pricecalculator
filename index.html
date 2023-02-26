@@ -54,7 +54,7 @@
               </div>
             </div>
             <!-- input feilds -->
-            <div data-repeater-list="group_bcd">
+            <div data-repeater-list="group_bcd" class="group">
               <div
                 data-repeater-item
                 class="row item repeater_radek mb-3 gap-2"
@@ -126,7 +126,7 @@
                     id="cena_celkem"
                     name="input_total_price"
                     class="form-control total"
-                    placeholder="0"
+                    placeholder="0.00"
                     disabled
                   />
                 </div>
@@ -137,7 +137,7 @@
                     id="cena_celkem"
                     name="input_total_price"
                     class="form-control vat_amount"
-                    placeholder="0"
+                    placeholder="0.00"
                     disabled
                   />
                 </div>
@@ -148,7 +148,7 @@
                     id="cena_celkem"
                     name="input_total_price"
                     class="form-control total_with_vat"
-                    placeholder="0"
+                    placeholder="0.00"
                     disabled
                   />
                 </div>
@@ -186,7 +186,7 @@
                       <td>
                         <input
                           type="number"
-                          class="number_bez_siperk input_zaklad_dph all_vat"
+                          class="number_bez_siperk input_zaklad_dph all_price_vat"
                           id="dph_celkem"
                           disabled
                         />
@@ -199,7 +199,7 @@
                       <td>
                         <input
                           type="number"
-                          class="number_bez_siperk input_cena_celkem_2 all_price_vat"
+                          class="number_bez_siperk input_cena_celkem_2 all_vat"
                           id="totalPrice_2"
                           disabled
                         />
@@ -214,6 +214,7 @@
             <input
               data-repeater-create
               type="button"
+              onclick="add()"
               class="btn btn-success add_btn mt-3 mt-lg-0"
               value="Add"
             />
@@ -235,9 +236,9 @@ Result:
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
-    <script src="jquery.min.js"></script>
-    <script src="jquery.repeater.js"></script>
-    <script src="form-repeater.int.js"></script>
+    <!-- <script src="jquery.min.js"></script> -->
+    <!-- <script src="jquery.repeater.js"></script>
+    <script src="form-repeater.int.js"></script> -->
     <script src="./customCode.js"></script>
   </body>
 </html>

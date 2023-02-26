@@ -1,8 +1,6 @@
-$(document).ready(function () {});
+const group = document.querySelector(".group");
+const clone = document.querySelector(".item").cloneNode(true);
 
-const items = () => {
-  // console.log(document.querySelectorAll(".item"));
-};
 
 const unit = () => {};
 
@@ -58,6 +56,12 @@ const vatPercent = (el) => {
   calculation(greatparent);
   items();
 };
+
+// Add Item
+const add = () => {
+  let temp = clone.cloneNode(true)
+group.appendChild(temp);
+}
 // delete Item
 const delte = (el) => {
   el.parentNode.parentNode.remove();

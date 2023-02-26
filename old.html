@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="PSPad editor, www.pspad.com" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <title>Price calculator</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row mt-3">
+        <div class="col-lg-12">
+          <form
+            class="repeater"
+            action="index.php"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <div data-repeater-item class="row">
+              <div class="mb-0 m-0 pr-0 col-lg-5">
+                <label for="name">Item</label>
+              </div>
+              <div class="mb-0 m-0 p-0 col-lg-1">
+                <label for="amout">Amount</label>
+              </div>
+              <div class="mb-0 m-0 p-0 col-lg-1">
+                <label for="subject">Unit</label>
+              </div>
+              <div class="mb-0 m-0 p-0 col-lg-1">
+                <label for="subject">Price without VAT</label>
+              </div>
+              <div class="mb-0 m-0 p-0 col-lg-1">
+                <label for="subject">VAT</label>
+              </div>
+              <div class="mb-0 m-0 p-0 col-lg-2">
+                <label for="subject">Total price </label>
+              </div>
+              <div class="mb-0 m-0 p-0 col-lg-1">
+                <label for="subject">Action</label>
+              </div>
+            </div>
+            <div data-repeater-list="group_bcd">
+              <div data-repeater-item class="row repeater_radek mb-3">
+                <div class="mb-0 m-0 pr-0 col-lg-5">
+                  <input
+                    type="text"
+                    name="input_item"
+                    item-name="polozka232"
+                    class="form-control"
+                    placeholder=""
+                  />
+                </div>
+
+                <div class="mb-0 m-0 p-0 col-lg-1">
+                  <input
+                    type="number"
+                    value="0"
+                    name="input_amount"
+                    class="form-control amount"
+                    placeholder=""
+                  />
+                </div>
+
+                <div class="mb-0 m-0 p-0 col-lg-1">
+                  <select
+                    id="faktura_detail_id_odberatel"
+                    name="group_bcd[0][odberatel]"
+                    class="form-select unit"
+                  >
+                    <option selected="" disabled="" value="">--Select--</option>
+                    <option value="vyber_2">hod.</option>
+                    <option value="vyber_1">ks</option>
+                    <option value="vyber_3">m</option>
+                    <option value="vyber_5">m²</option>
+                    <option value="vyber_4">kg</option>
+                  </select>
+                </div>
+
+                <div class="mb-0 m-0 p-0 col-lg-1">
+                  <input
+                    type="number"
+                    value="0"
+                    name="input_price"
+                    class="form-control price"
+                    placeholder=""
+                  />
+                </div>
+                <div class="mb-0 m-0 p-0 col-lg-1">
+                  <select
+                    id="kolik_procent_dph"
+                    name="kolik_procent_dph"
+                    class="form-select kolik_procent_dph"
+                  >
+                    <option selected="" disabled="" value="">--Select--</option>
+                    <option value="0">0%</option>
+                    <option value="15">15%</option>
+                    <option value="21" selected>21%</option>
+                  </select>
+                </div>
+
+                <div class="mb-0 m-0 p-0 col-lg-2">
+                  <input
+                    type="number"
+                    value="0"
+                    id="cena_celkem"
+                    name="input_total_price"
+                    class="form-control total"
+                    placeholder=""
+                    disabled
+                  />
+                </div>
+
+                <div class="mb-0 m-0 p-0 col-lg-1">
+                  <div class="d-grid">
+                    <input
+                      type="button"
+                      class="btn btn-primary delete"
+                      value="Delete"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-end">
+              <div class="col-lg-3">
+                <div class="d-flex">
+                  <table>
+                    <!-- <tr>
+                                    <td>Součet ceny:</td>
+                                    <td><input type='number' class='number_bez_siperk input_cena_celkem' id="totalPrice" disabled/> Kč</td>
+                                </tr>                                 -->
+
+                    <tr>
+                      <td>Základ DPH:</td>
+                      <td>
+                        <input
+                          type="number"
+                          class="number_bez_siperk input_zaklad_dph"
+                          id="zaklad_dph"
+                          disabled
+                        />
+                        Kč
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>DPH:</td>
+                      <td>
+                        <input
+                          type="number"
+                          class="number_bez_siperk input_zaklad_dph"
+                          id="dph_celkem"
+                          disabled
+                        />
+                        Kč
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Cena celkem:</td>
+                      <td>
+                        <input
+                          type="number"
+                          class="number_bez_siperk input_cena_celkem_2"
+                          id="totalPrice_2"
+                          disabled
+                        />
+                        Kč
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <input
+              data-repeater-create
+              type="button"
+              class="btn btn-success mt-3 mt-lg-0"
+              value="Add"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <?php
+Result:
+?>
+
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="jquery.repeater.js"></script>
+
+    <script src="form-repeater.int.js"></script>
+    <script src="/customCode.js"></script>
+  </body>
+</html>
